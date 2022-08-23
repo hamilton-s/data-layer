@@ -1,4 +1,4 @@
-import { getObjectFromS3, invokeLambda } from "./utils/utils.js";
+import { getObjectFromS3, invokeLambda } from "../utils/utils.js";
 
 const CONSUMER_TYPES = ["ENERGY", "TECHNOLOGY", "HEALTHCARE"];
 

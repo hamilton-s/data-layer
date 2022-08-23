@@ -21,7 +21,7 @@ provider:
 
 functions:
   triager:
-    handler: triager.default
+    handler: functions/triager.default
     events:
       - s3:
           bucket: my-s3-bucket-data-layer
@@ -31,11 +31,11 @@ functions:
             - prefix: ECOM/EVENTS
           existing: true
   technology:
-    handler: technology.default
+    handler: functions/technology.default
   energy:
-    handler: energy.default
+    handler: functions/energy.default
   healthcare:
-    handler: healthcare.default
+    handler: functions/healthcare.default
 
 resources:
   Resources:
