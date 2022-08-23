@@ -14,10 +14,14 @@ provider:
         - s3:PutBucketNotification
       Resource:
         - arn:aws:s3:::my-s3-bucket-data-layer/*
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: "*"
 
 functions:
-  lambda1:
-    handler: handler.lambda1
+  triager:
+    handler: triager.default
     events:
       - s3:
           bucket: my-s3-bucket-data-layer
@@ -26,6 +30,12 @@ functions:
           rules:
             - prefix: ECOM/EVENTS
           existing: true
+  technology:
+    handler: technology.default
+  energy:
+    handler: energy.default
+  healthcare:
+    handler: healthcare.default
 
 resources:
   Resources:

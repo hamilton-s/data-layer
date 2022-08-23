@@ -1,0 +1,13 @@
+{
+  "description": "core service in data-layer services",
+  "type": "module",
+  "dependencies": {
+    "eslint": "^8.22.0",
+    "prettier": "^2.7.1",
+    "serverless": "^3.22.0"
+  },
+  "devDependencies": {
+    "@middy/core": "^3.2.1",
+    "aws-sdk": "^2.1200.0"
+  }
+}
