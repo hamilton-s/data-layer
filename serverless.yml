@@ -11,18 +11,24 @@ provider:
     - Effect: Allow
       Action: "*"
       Resource: "*"
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutBucketNotification
+      Resource:
+        - arn:aws:s3:::my-s3-bucket-data-layer/*
 
 functions:
   lambda1:
     handler: handler.lambda1
     events:
       - s3:
-        bucket: my-s3-bucket-data-layer
-        events:
-          - s3:ObjectCreated:*
-        rules:
-          - prefix: ECOM/EVENTS/
-        existing: true
+          bucket: my-s3-bucket-data-layer
+          events:
+            - s3:ObjectCreated:*
+          rules:
+            - prefix: ECOM/EVENTS
+          existing: true
 
 resources:
   Resources:
